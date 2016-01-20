@@ -21,11 +21,11 @@ Scoverage-instrumented code hasn't been executed yet.
 
 * Setup the h2 database.
 
-        java -cp scalac-scoverage-runtime_2.11-1.1.1.jar:target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar db migrate example.yml
+        java -cp scalac-scoverage-runtime_2.11-1.1.1.jar:target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar com.example.helloworld.HelloWorldApplication db migrate example.yml
 
 * Run the server.
 
-        java -cp scalac-scoverage-runtime_2.11-1.1.1.jar:target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar server example.yml
+        java -cp scalac-scoverage-runtime_2.11-1.1.1.jar:target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar com.example.helloworld.HelloWorldApplication server example.yml
 
 * Check the coverage (in separate console).
 
