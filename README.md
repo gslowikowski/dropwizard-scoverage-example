@@ -52,3 +52,6 @@ during request processing.
 
 * I don't like the `scalac-scoverage-runtime_2.11-1.1.1.jar` here, outside the 'fat' application jar.
 Will investigate, how to improve it. Adding to project dependencies is wrong, and just does not work.
+
+* The `generate-sources` phase must be executed before `scoverage:report-only` to add `src/main/scala` source root
+(to execute `sbt-compiler:addScalaSources` task). Without it Scoverage report will not be generated.
