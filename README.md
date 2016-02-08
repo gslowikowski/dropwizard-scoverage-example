@@ -11,7 +11,7 @@ with Scala sources and Scoverage Maven Plugin configuration added.
 
 * To package the example run:
 
-        mvn scoverage:integration-check
+        mvn scoverage:package
 
 This is a trick. It will generate `target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar` file,
 (with `scoverage-` prefix to avoid overriding original, non-instrumented file).
@@ -21,11 +21,11 @@ Scoverage-instrumented code hasn't been executed yet.
 
 * Setup the h2 database.
 
-        java -cp scalac-scoverage-runtime_2.11-1.1.1.jar:target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar com.example.helloworld.HelloWorldApplication db migrate example.yml
+        java -jar target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar db migrate example.yml
 
 * Run the server.
 
-        java -cp scalac-scoverage-runtime_2.11-1.1.1.jar:target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar com.example.helloworld.HelloWorldApplication server example.yml
+        java -jar target/scoverage-dropwizard-example-1.0.0-SNAPSHOT.jar server example.yml
 
 * Check the coverage (in separate console).
 
@@ -49,9 +49,6 @@ The coverage should be 100% now, because there is only one line of Scala code an
 during request processing.
 
 # Notes
-
-* I don't like the `scalac-scoverage-runtime_2.11-1.1.1.jar` here, outside the 'fat' application jar.
-Will investigate, how to improve it. Adding to project dependencies is wrong, and just does not work.
 
 * The `generate-sources` phase must be executed before `scoverage:report-only` to add `src/main/scala` source root
 (to execute `sbt-compiler:addScalaSources` task). Without it Scoverage report will not be generated.
