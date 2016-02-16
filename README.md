@@ -52,3 +52,7 @@ during request processing.
 
 * The `generate-sources` phase must be executed before `scoverage:report-only` to add `src/main/scala` source root
 (to execute `sbt-compiler:addScalaSources` task). Without it Scoverage report will not be generated.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/gslowikowski/dropwizard-scoverage-example/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
